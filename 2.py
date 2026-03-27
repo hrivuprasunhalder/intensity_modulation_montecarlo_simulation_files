@@ -6,7 +6,7 @@ import math
 
 num_segments = 100
 num_rotations = 1000
-num_per_rotation = 10000
+num_per_rotation = 1000000
 omega = 3140                                      # 30000 rpm
 v = 299792458
 R = 0.1                                             # radius 10 cm
