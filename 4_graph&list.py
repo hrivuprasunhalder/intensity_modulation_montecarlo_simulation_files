@@ -4,7 +4,7 @@ import random
 import math
 import csv
 
-num_tries = 100
+num_tries = 500
 num_segments = 100
 num_rotations = 500
 omega = 3140                                    # 30000 rpm
@@ -46,10 +46,10 @@ def tries(num_per_rotation):
 
     return counts
 
-x_values_num_per_rotation = list(range(1000, 13000, 1000))
+x_values_num_per_rotation = list(range(1000, 13000, 500))
 y_values_valid_values = [tries(p) for p in x_values_num_per_rotation ]
 
-with open("Omega3140data.csv", "w", newline="") as file:
+with open("Omega3140_500tries_23entries_data.csv", "w", newline="") as file:
     writer = csv.writer(file)                    #csv file creation
     writer.writerow(["Particles per Rotation", " Validity(%)"])
     for n3 in range(len(x_values_num_per_rotation)):
