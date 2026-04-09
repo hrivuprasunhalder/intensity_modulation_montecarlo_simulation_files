@@ -4,12 +4,12 @@ import random
 import math
 import csv
 
-num_tries = 100                                 # % 
+num_tries = 100                              # % value
 num_segments = 100
 num_rotations = 500
-omega = 3140                                    # 30000 rpm
-v = 299792458
-R = 0.06                                        # radius 10 cm
+omega = 100000                                #rad/s
+v = 299792458                                #m/s
+R = 2                                        #radius(m)
 
 gap_length = (2* (math.pi) *R) / num_segments                                
 xmax = gap_length - ((omega * R * gap_length) / v)
@@ -23,11 +23,6 @@ def simulate(num_per_rotation):
         
         for m1 in range(num_per_rotation):
             
-             print("|")
-             print("/")
-             print("-")
-             print("\\")
-             
              i = random.randint(0 , num_segments-1)# random integer in 0 to num_segments range
              x = random.uniform(0 , gap_length )   # random float in 0 to gap_length range              
              if i % 2 == 1:                        # odd number + x = gap range
@@ -39,7 +34,7 @@ def simulate(num_per_rotation):
 
 def tries(num_per_rotation):
 
-    counts = 0                                      #probabilities over 0.5
+    counts = 0                                     #probabilities under 0.5
 
     for n2 in range(num_tries):
         
@@ -50,10 +45,10 @@ def tries(num_per_rotation):
 
     return counts
 
-x_values_num_per_rotation = list(range(1000, 13500, 500))
+x_values_num_per_rotation = list(range(1000, 5500, 500))
 y_values_valid_values = [tries(p) for p in x_values_num_per_rotation ]
 
-with open("Omega3140_100tries_24entries_data.csv", "w", newline="") as file:
+with open("Omega100000_R2m_100tries_8entries_data.csv", "w", newline="") as file:
     writer = csv.writer(file)                    #csv file creation
     writer.writerow(["Particles per Rotation", " Validity(%)"])
     for n3 in range(len(x_values_num_per_rotation)):

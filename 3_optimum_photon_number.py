@@ -6,10 +6,10 @@ import math
 num_tries = 100
 num_segments = 100
 num_rotations = 500
-num_per_rotation = 10000
-omega = 3140                                    # 30000 rpm
-v = 299792458
-R = 0.06                                        # radius 10 cm
+num_per_rotation = 1000
+omega = 100000                             #rad/s                                                             
+v = 299792458                              #m/s
+R = 10                                     #radius(m) 
 
 gap_length = (2* (math.pi) *R) / num_segments                                
 xmax = gap_length - ((omega * R * gap_length) / v)
@@ -48,7 +48,7 @@ def tries(num_tries):
 
 num_invalid_values = tries(num_tries)
 
-print(num_invalid_values)
+print("Invalid Values(%): ", num_invalid_values)
         
 
     
