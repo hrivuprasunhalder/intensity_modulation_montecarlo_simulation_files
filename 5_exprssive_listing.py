@@ -26,7 +26,7 @@ def simulate(num_per_rotation):
              print("|")
              print("/")
              print("-")
-             print("")
+             print("\\")
              
              i = random.randint(0 , num_segments-1)# random integer in 0 to num_segments range
              x = random.uniform(0 , gap_length )   # random float in 0 to gap_length range              
