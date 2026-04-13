@@ -43,16 +43,14 @@ p_prob = [simulate(xmax) for xmax in xmax_list]    #probabilistic result using m
 
 plt.plot(v, p_det, label="Deterministic", color= "blue")
 plt.plot(v, p_prob, label="Probabilistic", color= "red", linestyle= "--")
-plt.xlabel("Velocity(m/s)")
-plt.ylabel("Transmission Probabilty(I/I0)")
-plt.title("Deterministic(Equation) vs Probabilistic(Monte Carlo) Results")
-plt.legend()
-plt.grid(True)
-plt.savefig("validation_plot_5.png")
+plt.xlabel("Velocity (m/s)")
+plt.ylabel("Transmission Probabilty  (I/$I_0$)")
+plt.legend(loc="center right")
+plt.savefig("validation_plot_6.png")
 plt.show()
 #-----------csv-------------------
 
-with open("validation_5.csv", "w", newline="") as f:
+with open("validation_6.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["v", "p_det", "p_prob"])
     for vi, yi1, yi2 in zip(v, p_det, p_prob):

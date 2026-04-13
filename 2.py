@@ -6,10 +6,10 @@ import math
 
 num_segments = 100
 num_rotations = 500
-num_per_rotation = 10000
-omega = 100000                                    #rad/s
+num_per_rotation = 5000
+omega = 55000000                                 #rad/s
 v = 299792458                                     #m/s
-R = 10                                            #radius(m)
+R = 1                                           #radius(m)
 
 gap_length = (2* (math.pi) *R) / num_segments                                
 xmax = gap_length - ((omega * R * gap_length) / v)
